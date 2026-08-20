@@ -39,12 +39,12 @@ function isRepository(value: unknown): value is Repository {
   if (!value || typeof value !== "object") return false;
   const r = value as Record<string, unknown>;
   return (
-    typeof r.id === "string" &&
-    typeof r.name === "string" &&
-    typeof r.owner === "string" &&
-    typeof r.url === "string" &&
-    typeof r.branch === "string" &&
-    (r.provider === "github" || r.provider === "gitlab" || r.provider === "git")
+    typeof r["id"] === "string" &&
+    typeof r["name"] === "string" &&
+    typeof r["owner"] === "string" &&
+    typeof r["url"] === "string" &&
+    typeof r["branch"] === "string" &&
+    (r["provider"] === "github" || r["provider"] === "gitlab" || r["provider"] === "git")
   );
 }
 

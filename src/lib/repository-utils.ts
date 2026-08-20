@@ -44,7 +44,7 @@ export function parseRepoUrl(input: string): ParsedRepo | null {
   if (!match) return null;
 
   const [, host, owner, name] = match;
-  if (!owner || !name) return null;
+  if (!host || !owner || !name) return null;
 
   const provider = providerFromHost(host);
   return {
